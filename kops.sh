@@ -13,6 +13,6 @@ mv kops-linux-amd64 /usr/local/bin/kops
 
 aws s3api create-bucket --bucket cloudanddevopsbyraham0073456.k8s.local --region us-east-1
 aws s3api put-bucket-versioning --bucket cloudanddevopsbyraham0073456.k8s.local --region us-east-1 --versioning-configuration Status=Enabled
-export KOPS_STATE_STORE=s3://cloudanddevopsbyraham0073456.k8s.local
+export KOPS_STATE_STORE=s3://mani543.k8s
 kops create cluster --name timber.k8s.local --zones us-east-1a,us-east-1b,us-east-1c --control-plane-size t2.medium --control-plane-count 1 --control-plane-volume-size 30 --node-size t2.micro --node-count 2 --node-volume-size 20
 kops update cluster --name timber.k8s.local --yes --admin
